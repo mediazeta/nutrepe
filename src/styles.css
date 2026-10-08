@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+:root {
+  /* Marca Nutrepe — paleta extraída del logotipo real (public/brand/nutrepe-logo.jpg):
+     azul marino + azul vivo del ápice "N/manzana", rojo vivo del trazo "pe"/manzana.
+     Los nombres de variable (forest/mint/warm) se conservan por compatibilidad semántica
+     con los distintos roles de color (primario/acento/aviso), pero forest=azul, mint=rojo. */
+  --color-ink: #141a2e;
+  --color-muted: #5c6478;
+  --color-cream: #f7f8fb;
+  --color-cream-2: #eef1f8;
+  --color-forest: #0b1e6e;
+  --color-forest-2: #0c57d6;
+  --color-forest-soft: #e7edfc;
+  --color-mint: #e30613;
+  --color-mint-soft: #fbe1e2;
+  --color-warm: #dd9a52;
+  --color-warm-soft: #fbeada;
+  --color-white: #ffffff;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-muted: var(--color-muted);
+  --color-cream: var(--color-cream);
+  --color-cream-2: var(--color-cream-2);
+  --color-forest: var(--color-forest);
+  --color-forest-2: var(--color-forest-2);
+  --color-forest-soft: var(--color-forest-soft);
+  --color-mint: var(--color-mint);
+  --color-mint-soft: var(--color-mint-soft);
+  --color-warm: var(--color-warm);
+  --color-warm-soft: var(--color-warm-soft);
+
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.7s ease-out forwards;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Los elementos custom de Angular son `display: inline` por defecto. Al envolver contenido de
+   bloque eso genera fragmentos de caja inline que pueden interceptar clics (p.ej. en formularios
+   cuyo alto cambia). `contents` los hace transparentes al layout: la caja real la aportan sus
+   hijos, tal y como se espera de un componente "wrapper". */
+app-container,
+app-button,
+app-section-heading,
+app-phone-frame,
+app-illustrative-tag,
+app-logo,
+app-header,
+app-footer,
+app-hero,
+app-problem-solution,
+app-how-it-works,
+app-product-showcase,
+app-ai-section,
+app-about-pablo,
+app-pricing,
+app-testimonials,
+app-faq,
+app-waitlist-form,
+app-final-cta,
+app-home,
+app-legal-page,
+app-aviso-legal,
+app-privacidad,
+app-cookies,
+app-terminos-suscripcion {
+  display: contents;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--color-mint);
+  color: var(--color-white);
+}

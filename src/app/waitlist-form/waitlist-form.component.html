@@ -1,0 +1,64 @@
+@if (status() === 'done') {
+  <div class="flex flex-col items-center gap-3 rounded-2xl bg-white/10 p-8 text-center">
+    <lucide-angular name="circle-check-big" class="h-9 w-9 text-mint"></lucide-angular>
+    <p class="font-semibold text-cream">
+      {{ wasDuplicate() ? '¡Ya estabas en la lista, ' + firstName + '!' : '¡Gracias, ' + firstName + '!' }}
+    </p>
+    <p class="text-sm text-cream/75">
+      Hemos registrado tu interés. Cuando Nutrepe esté disponible para nuevas altas, serás de los
+      primeros en saberlo.
+    </p>
+  </div>
+} @else {
+  <form [formGroup]="form" (ngSubmit)="submit()" class="w-full max-w-md space-y-3">
+    <div>
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="Tu nombre"
+        class="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-cream placeholder:text-cream/50 focus:border-mint focus:outline-none"
+      />
+      @if (nameError) {
+        <p class="mt-1 text-xs text-warm">{{ nameError }}</p>
+      }
+    </div>
+    <div>
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Tu correo electrónico"
+        class="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-cream placeholder:text-cream/50 focus:border-mint focus:outline-none"
+      />
+      @if (emailError) {
+        <p class="mt-1 text-xs text-warm">{{ emailError }}</p>
+      }
+    </div>
+
+    <!-- Honeypot: oculto para personas, visible para bots que autocompletan todos los campos -->
+    <div class="hidden" aria-hidden="true">
+      <label>
+        No rellenar este campo
+        <input type="text" formControlName="company" tabindex="-1" autocomplete="off" />
+      </label>
+    </div>
+
+    <button
+      type="submit"
+      [disabled]="status() === 'submitting'"
+      class="flex w-full items-center justify-center gap-2 rounded-full bg-mint px-6 py-3.5 text-sm font-bold text-white transition-transform active:scale-[0.98] disabled:opacity-70"
+    >
+      @if (status() === 'submitting') {
+        <lucide-angular name="loader-circle" class="h-4 w-4 animate-spin"></lucide-angular>
+      } @else {
+        Quiero empezar con Nutrepe
+      }
+    </button>
+    @if (formError()) {
+      <p class="text-center text-xs text-warm">{{ formError() }}</p>
+    }
+    <p class="text-center text-xs text-cream/60">
+      Lista de espera sin compromiso. Solo guardamos tu nombre y correo para avisarte: este
+      formulario no procesa pagos ni datos de salud.
+    </p>
+  </form>
+}

@@ -1,0 +1,55 @@
+<section class="bg-forest py-20 text-cream sm:py-28">
+  <app-container>
+    <app-section-heading
+      [light]="true"
+      eyebrow="Tecnología con respaldo humano"
+      title="La inteligencia artificial te acompaña. Tu nutricionista te guía."
+      description="La IA mejora tu experiencia del día a día, pero nunca sustituye la valoración ni las decisiones clínicas de tu dietista-nutricionista."
+    ></app-section-heading>
+
+    <div class="mt-14 grid gap-10 lg:grid-cols-2 lg:items-center">
+      <div class="space-y-4">
+        <div class="rounded-3xl bg-white/5 p-5 ring-1 ring-white/10">
+          <div class="mb-3 flex items-center gap-2 text-mint">
+            <lucide-angular name="sparkles" class="h-4 w-4"></lucide-angular>
+            <span class="text-xs font-semibold uppercase tracking-wide">Conversación de ejemplo</span>
+          </div>
+          <div class="space-y-3">
+            <div class="ml-auto max-w-[85%] rounded-2xl rounded-tr-sm bg-cream px-4 py-2.5 text-sm text-forest">
+              Hoy voy a comer fuera de casa, ¿cómo puedo adaptar mi menú?
+            </div>
+            <div class="max-w-[90%] rounded-2xl rounded-tl-sm bg-white/10 px-4 py-2.5 text-sm text-cream/90">
+              Puedo ayudarte a identificar alternativas compatibles con las recomendaciones de tu
+              plan. Cuéntame qué opciones tienes disponibles.
+            </div>
+          </div>
+        </div>
+        <div class="rounded-3xl bg-white/5 p-5 ring-1 ring-white/10">
+          <div class="space-y-3">
+            <div class="ml-auto max-w-[85%] rounded-2xl rounded-tr-sm bg-cream px-4 py-2.5 text-sm text-forest">
+              ¿Con qué puedo sustituir el arroz de mi comida de hoy?
+            </div>
+            <div class="max-w-[90%] rounded-2xl rounded-tl-sm bg-white/10 px-4 py-2.5 text-sm text-cream/90">
+              Dentro de tu plan hay varias alternativas equivalentes. Te muestro las opciones que
+              mejor se adaptan a lo que tienes en casa.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-5">
+        @for (g of guarantees; track g.title) {
+          <div class="flex gap-4 rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-mint/15 text-mint">
+              <lucide-angular [name]="g.icon" class="h-5 w-5"></lucide-angular>
+            </span>
+            <div>
+              <h3 class="font-semibold text-cream">{{ g.title }}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-cream/70">{{ g.text }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </app-container>
+</section>

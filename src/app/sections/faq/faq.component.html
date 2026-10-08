@@ -1,0 +1,31 @@
+<section id="faq" class="bg-cream-2 py-20 sm:py-28">
+  <app-container>
+    <app-section-heading eyebrow="Preguntas frecuentes" title="Lo que suele preguntarnos la gente"></app-section-heading>
+
+    <div class="mx-auto mt-12 max-w-3xl divide-y divide-ink/10 rounded-3xl bg-white ring-1 ring-ink/5">
+      @for (faq of faqs; track faq.question; let i = $index) {
+        <div>
+          <button
+            (click)="toggle(i)"
+            class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+            [attr.aria-expanded]="openIndex() === i"
+          >
+            <span class="font-semibold text-forest">{{ faq.question }}</span>
+            <lucide-angular
+              name="chevron-down"
+              [class]="'h-5 w-5 shrink-0 text-forest-2 transition-transform ' + (openIndex() === i ? 'rotate-180' : '')"
+            ></lucide-angular>
+          </button>
+          @if (openIndex() === i) {
+            <div class="px-6 pb-5 text-sm leading-relaxed text-ink/75 sm:text-base">
+              {{ faq.answer }}
+              @if (faq.provisional) {
+                <span class="mt-2 block text-xs font-medium text-warm">Contenido provisional, pendiente de confirmación final.</span>
+              }
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </app-container>
+</section>
