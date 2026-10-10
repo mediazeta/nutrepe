@@ -41,9 +41,3 @@ export const plans: Plan[] = [
     ],
   },
 ];
-
-export const initialFeeNote =
-  "Podría aplicarse una cuota inicial de 59,90 € si el servicio incluye una evaluación y elaboración inicial del plan que la justifique. [PENDIENTE DE VALIDAR]";
-
-export const pricingDisclaimer =
-  "Los importes mostrados son una propuesta comercial orientativa, todavía no confirmada ni operativa. No se realizan cobros reales desde esta web hasta que las tarifas y condiciones queden validadas.";

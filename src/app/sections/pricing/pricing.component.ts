@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ContainerComponent } from '../../ui/container.component';
 import { SectionHeadingComponent } from '../../ui/section-heading.component';
 import { ButtonComponent } from '../../ui/button.component';
-import { plans, initialFeeNote, pricingDisclaimer } from '../../data/plans';
+import { plans } from '../../data/plans';
 
 @Component({
   selector: 'app-pricing',
@@ -12,6 +12,4 @@ import { plans, initialFeeNote, pricingDisclaimer } from '../../data/plans';
 })
 export class PricingComponent {
   readonly plans = plans;
-  readonly initialFeeNote = initialFeeNote;
-  readonly pricingDisclaimer = pricingDisclaimer;
 }

@@ -140,8 +140,9 @@ lista.
 ## ⚠️ Pendiente de validar antes de publicar
 
 **Comercial / precios**
-- Precios definitivos de los planes mensual (49,90 €) y trimestral (129,90 €).
-- Si se aplica la cuota inicial de 59,90 € y en qué condiciones.
+- Precios confirmados por el cliente: mensual 40 €/mes, semestral 200 € (33,33 €/mes). Ya no se
+  muestra la nota de cuota inicial ni el disclaimer de "importes orientativos" en la sección de
+  planes — confirmar que esto significa que los precios ya son definitivos y no una propuesta.
 - Condiciones de permanencia y cancelación.
 - Alcance exacto de la "supervisión profesional" incluida en cada plan.
 - Medio de pago / pasarela a integrar (actualmente no se procesan cobros).
@@ -158,18 +159,21 @@ lista.
   captura real; confirmar que esos dos nombres y esa descripción reflejan bien el producto.
 
 **Pablo Egüen**
-- Fotografía profesional: no se ha incorporado ninguna imagen real (se usa un placeholder con
-  iniciales). Añadir una fotografía con los derechos correspondientes.
+- Fotografía profesional añadida (`public/brand/pablo.png`, facilitada directamente por el
+  cliente). Confirmar que es la versión definitiva que quiere mostrar públicamente.
 - Los datos de formación, colegiación y trayectoria están verificados contra
   pabloeguennutricion.com (equipo, servicios, metodología y tarifas) a fecha de redacción de esta
   web. Revisar que sigan vigentes antes de publicar.
 
 **Testimonios**
-- Los dos testimonios mostrados son opiniones reales sobre Pablo Egüen como profesional
-  (publicadas en su web), no sobre la app Nutrepe. Falta validar el permiso explícito de uso en
-  este nuevo contexto comercial.
-- La sección está preparada para incorporar resultados del piloto cuando existan; no inventar
-  cifras mientras tanto.
+- Los tres testimonios mostrados (Idaira Prieto, Laura Gión, Juan José Fernández Tebar) fueron
+  facilitados directamente por el cliente para usarse en esta web — no hace falta validar permiso
+  de uso por separado, pero conviene guardar constancia de que los pacientes/deportistas autorizan
+  la publicación de su nombre y opinión.
+- Ahora rotan en un carrusel con auto-avance (`src/app/sections/testimonials/`); si se añaden más
+  testimonios en el futuro, solo hay que ampliar `src/app/data/testimonials.ts`.
+- Se quitó la nota sobre el piloto ("Nutrepe se encuentra en fase de desarrollo...") a petición del
+  cliente.
 
 **Legal / RGPD**
 - Las páginas en `/legal/*` son borradores orientativos, marcados como tales en la propia página.

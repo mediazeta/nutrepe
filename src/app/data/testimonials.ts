@@ -1,6 +1,6 @@
-// Testimonios reales sobre Pablo Egüen como profesional, obtenidos de su web personal.
-// Importante: son opiniones sobre su trabajo como nutricionista, no sobre la app Nutrepe
-// (todavía no existen resultados del piloto). No crear ni atribuir reseñas de la plataforma.
+// Testimonios reales sobre Pablo Egüen como profesional, facilitados directamente por el
+// cliente. Importante: son opiniones sobre su trabajo como nutricionista, no sobre la app
+// Nutrepe. No crear ni atribuir reseñas de la plataforma.
 
 export const professionalTestimonials = [
   {
@@ -10,11 +10,15 @@ export const professionalTestimonials = [
     role: "Deportista",
   },
   {
-    quote: "Es un gran profesional.",
+    quote:
+      "Llevo dos años trabajando con Pablo y mi rendimiento deportivo ha mejorado enormemente; además, me siento mucho mejor físicamente. Es un profesional fantástico, con un gran nivel de conocimientos, y se implica mucho, asegurándose de que te sientas cómodo con el plan de entrenamiento. ¡Es el mejor!",
+    author: "Laura Gión",
+    role: "Deportista",
+  },
+  {
+    quote:
+      "Hola, llevo un tiempo acudiendo a él como nutricionista y estoy increíblemente agradecido. Es un profesional fantástico y me ha ayudado a alcanzar mis objetivos. Lo recomiendo encarecidamente.",
     author: "Juan José Fernández Tebar",
     role: "Coach",
   },
 ] as const;
-
-export const pilotNote =
-  "Nutrepe se encuentra en fase de desarrollo. Está prevista una prueba piloto con un pequeño grupo de pacientes para evaluar el funcionamiento real de la plataforma. Los resultados se publicarán en esta sección en cuanto estén disponibles.";
