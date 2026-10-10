@@ -12,7 +12,7 @@ const legalLinks = [
   { label: 'Aviso legal', href: '/legal/aviso-legal' },
   { label: 'Política de privacidad', href: '/legal/privacidad' },
   { label: 'Política de cookies', href: '/legal/cookies' },
-  { label: 'Términos de suscripción', href: '/legal/terminos-suscripcion' },
+  { label: 'Términos de contratación', href: '/legal/terminos-suscripcion' },
 ] as const;
 
 @Component({

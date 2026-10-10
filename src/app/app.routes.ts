@@ -8,8 +8,8 @@ import { TerminosSuscripcionComponent } from './pages/legal/terminos-suscripcion
 export const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Nutrepe — Nutrición personalizada con IA y seguimiento profesional' },
   { path: 'legal/aviso-legal', component: AvisoLegalComponent, title: 'Aviso legal | Nutrepe' },
-  { path: 'legal/privacidad', component: PrivacidadComponent, title: 'Política de privacidad | Nutrepe' },
+  { path: 'legal/privacidad', component: PrivacidadComponent, title: 'Política de privacidad e información sobre IA | Nutrepe' },
   { path: 'legal/cookies', component: CookiesComponent, title: 'Política de cookies | Nutrepe' },
-  { path: 'legal/terminos-suscripcion', component: TerminosSuscripcionComponent, title: 'Términos y condiciones de suscripción | Nutrepe' },
+  { path: 'legal/terminos-suscripcion', component: TerminosSuscripcionComponent, title: 'Términos y condiciones de contratación | Nutrepe' },
   { path: '**', redirectTo: '' },
 ];

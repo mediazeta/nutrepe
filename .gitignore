@@ -43,3 +43,9 @@ Thumbs.db
 
 # datos recogidos por el backend del formulario (PII: nombre + correo) — nunca a git
 /data
+
+# notas internas de desarrollo — no publicar en el repositorio
+/DEV_NOTES.md
+
+# documentos legales originales (incluye el 03, de uso interno) — nunca a git
+/legal-source

@@ -1,5 +1,5 @@
-// Precios orientativos, TODAVÍA NO CONFIRMADOS. Ver nota legal en la sección de planes y en el README.
-// No se procesan cobros reales: la web solo presenta la propuesta comercial.
+// Precios según los Términos y Condiciones de Contratación v1.0 (11/09/2026),
+// todavía marcados por el propio documento como "para revisión jurídica final".
 
 export type Plan = {
   id: string;
@@ -16,8 +16,9 @@ export const plans: Plan[] = [
   {
     id: "mensual",
     name: "Plan mensual",
-    price: "40 €",
+    price: "39,90 €",
     priceDetail: "/mes",
+    billingNote: "Renovación automática mensual, cancelable en cualquier momento",
     features: [
       "Acceso completo a la aplicación",
       "Plan de alimentación personalizado",
@@ -31,8 +32,8 @@ export const plans: Plan[] = [
     name: "Plan semestral",
     price: "200 €",
     priceDetail: "/ cada 6 meses",
-    billingNote: "Equivalente a 33,33 €/mes",
-    savingsNote: "Ahorras 40 € frente a 6 mensualidades",
+    billingNote: "Equivalente a 33,33 €/mes · renovación automática cada 6 meses",
+    savingsNote: "Ahorras 39,40 € frente a 6 mensualidades",
     recommended: true,
     features: [
       "Todo lo incluido en el plan mensual",
