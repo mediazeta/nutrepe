@@ -6,11 +6,11 @@
       description="Opiniones reales sobre su trabajo como dietista-nutricionista, publicadas en su web profesional."
     ></app-section-heading>
 
-    <div class="mt-12 grid gap-6 sm:mx-auto sm:max-w-3xl sm:grid-cols-2">
+    <div class="mt-14 grid gap-10 border-t border-ink/10 pt-10 sm:max-w-3xl sm:grid-cols-2 sm:gap-0 sm:divide-x sm:divide-ink/10">
       @for (t of testimonials; track t.author) {
-        <figure class="rounded-3xl bg-white p-7 ring-1 ring-ink/5">
-          <lucide-angular name="quote" class="h-6 w-6 text-mint"></lucide-angular>
-          <blockquote class="mt-4 text-sm leading-relaxed text-ink/85 sm:text-base">“{{ t.quote }}”</blockquote>
+        <figure class="sm:px-10 sm:first:pl-0">
+          <span class="text-3xl font-extrabold text-mint">“</span>
+          <blockquote class="-mt-2 text-base leading-relaxed text-ink/85">{{ t.quote }}</blockquote>
           <figcaption class="mt-4 text-sm">
             <span class="font-semibold text-forest">{{ t.author }}</span>
             <span class="text-muted"> · {{ t.role }}</span>
@@ -19,9 +19,8 @@
       }
     </div>
 
-    <div class="mx-auto mt-10 flex max-w-2xl items-start gap-3 rounded-2xl border border-dashed border-forest/20 bg-mint-soft/60 p-5">
-      <lucide-angular name="flask-conical" class="mt-0.5 h-5 w-5 shrink-0 text-forest-2"></lucide-angular>
-      <p class="text-sm leading-relaxed text-forest-2/90">{{ pilotNote }}</p>
+    <div class="mt-10 flex max-w-2xl items-start gap-3 border-l-2 border-mint pl-5">
+      <p class="text-sm leading-relaxed text-ink/70">{{ pilotNote }}</p>
     </div>
   </app-container>
 </section>

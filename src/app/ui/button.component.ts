@@ -2,23 +2,30 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
-type Variant = 'primary' | 'secondary' | 'ghost';
+type Variant = 'primary' | 'secondary' | 'ghost' | 'text';
 type Size = 'md' | 'lg';
 
 const VARIANT_CLASSES: Record<Variant, string> = {
-  primary: 'bg-forest text-cream hover:bg-forest-2 shadow-[0_8px_24px_-8px_rgba(11,30,110,0.45)]',
-  secondary: 'bg-white text-forest border border-forest/15 hover:border-forest/30 hover:bg-forest-soft',
-  ghost: 'bg-transparent text-forest hover:bg-forest-soft',
+  primary:
+    'rounded-full justify-center active:scale-[0.97] bg-forest text-cream hover:bg-forest-2',
+  secondary:
+    'rounded-full justify-center active:scale-[0.97] bg-white text-forest border border-ink/15 hover:border-ink/30',
+  ghost: 'rounded-full justify-center active:scale-[0.97] bg-transparent text-forest hover:text-mint',
+  text: 'text-forest underline decoration-ink/25 decoration-2 underline-offset-[6px] hover:decoration-mint hover:text-mint',
 };
 
-const SIZE_CLASSES: Record<Size, string> = {
-  md: 'px-5 py-2.5 text-sm',
-  lg: 'px-7 py-3.5 text-base',
+const SIZE_CLASSES: Record<Variant, Record<Size, string>> = {
+  primary: { md: 'px-5 py-2.5 text-sm', lg: 'px-7 py-3.5 text-base' },
+  secondary: { md: 'px-5 py-2.5 text-sm', lg: 'px-7 py-3.5 text-base' },
+  ghost: { md: 'px-5 py-2.5 text-sm', lg: 'px-7 py-3.5 text-base' },
+  text: { md: 'text-sm', lg: 'text-base' },
 };
 
 /**
  * Botón polimórfico: renderiza <a> (ancla de scroll "#...", enlace externo "http...",
  * o ruta interna de Angular Router) o <button>, según lo que se pase en [href].
+ * La variante "text" es un enlace subrayado sin caja (CTA de baja intensidad, al estilo
+ * de los "Ver planes"/"Conocernos mejor" de referencias editoriales minimalistas).
  */
 @Component({
   selector: 'app-button',
@@ -61,9 +68,9 @@ export class ButtonComponent {
 
   get classes(): string {
     return [
-      'inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 active:scale-[0.97] disabled:opacity-70',
+      'inline-flex items-center gap-2 font-semibold transition-all duration-200 disabled:opacity-70',
       VARIANT_CLASSES[this.variant],
-      SIZE_CLASSES[this.size],
+      SIZE_CLASSES[this.variant][this.size],
       this.className,
     ].join(' ');
   }

@@ -1,81 +1,88 @@
 export type ProductTab = {
   id: string;
-  icon: "clipboard-list" | "chef-hat" | "message-circle" | "chart-line" | "stethoscope";
+  icon: 'clipboard-list' | 'chart-line' | 'message-circle' | 'folder' | 'calendar-check';
   tabLabel: string;
   title: string;
   description: string;
   points: string[];
+  // Captura real de la app (public/app/*.png), no un mockup ilustrativo.
+  screenshot: string;
 };
 
 export const productTabs: ProductTab[] = [
   {
-    id: "plan",
-    icon: "clipboard-list",
-    tabLabel: "Mi plan nutricional",
-    title: "Mi plan nutricional",
+    id: 'plan',
+    icon: 'clipboard-list',
+    tabLabel: 'Mi plan nutricional',
+    title: 'Mi plan nutricional',
     description:
-      "Tu planificación semanal, siempre a mano, con las cantidades y recomendaciones que tu nutricionista ha definido para ti.",
+      'Tu menú semanal organizado por día, con la adherencia, la racha y el avance del plan siempre a la vista.',
     points: [
-      "Planificación de comidas adaptada a tu día",
-      "Distribución semanal clara y organizada",
-      "Cantidades y recomendaciones personalizadas",
-      "Información nutricional cuando corresponda",
+      'Menú semanal con cada comida del día',
+      'Indicadores de adherencia y racha',
+      'Progreso del plan actual de un vistazo',
+      'Cantidades que puedes mostrar u ocultar',
     ],
+    screenshot: 'plan.png',
   },
   {
-    id: "recetas",
-    icon: "chef-hat",
-    tabLabel: "Recetas y alternativas",
-    title: "Recetas y alternativas",
+    id: 'evolucion',
+    icon: 'chart-line',
+    tabLabel: 'Mi evolución',
+    title: 'Mi evolución',
     description:
-      "Ideas prácticas para no repetir siempre lo mismo, con alternativas que respetan tus gustos dentro de las reglas de tu plan.",
+      'Registra revisiones de peso, medidas y sensaciones entre consultas, y ve tu progreso semanal resumido.',
     points: [
-      "Ideas de recetas sencillas de preparar",
-      "Sustitución de alimentos equivalentes",
-      "Alternativas adaptadas a tus preferencias",
-      "Organización práctica de tus comidas",
+      'Nuevo registro de peso y medidas en un toque',
+      'Progreso de la semana y racha de constancia',
+      'Resumen semanal con prioridades para ajustar',
+      'Historial de revisiones entre consultas',
     ],
+    screenshot: 'evolucion.png',
   },
   {
-    id: "asistente",
-    icon: "message-circle",
-    tabLabel: "Asistente inteligente",
-    title: "Asistente inteligente",
+    id: 'chat',
+    icon: 'message-circle',
+    tabLabel: 'Asistente inteligente',
+    title: 'Asistente inteligente',
     description:
-      "Un chat disponible cuando lo necesitas para resolver dudas frecuentes sobre tu alimentación, siempre dentro del marco de tu plan.",
+      'Resuelve dudas sobre tu menú en cualquier momento, con respuestas basadas en tu plan nutricional real.',
     points: [
-      "Chat conversacional disponible en la app",
-      "Respuestas a dudas frecuentes sobre nutrición",
-      "Consultas sobre recetas y alimentos",
-      "Recomendaciones coherentes con tu plan validado",
+      'Chat disponible dentro de la app',
+      'Respuestas basadas en tu plan y tus preferencias',
+      'Sugerencias concretas para tu próxima comida',
+      'Límite de mensajes diarios transparente',
     ],
+    screenshot: 'chat.png',
   },
   {
-    id: "evolucion",
-    icon: "chart-line",
-    tabLabel: "Mi evolución",
-    title: "Mi evolución",
+    id: 'documentos',
+    icon: 'folder',
+    tabLabel: 'Mis documentos',
+    title: 'Mis documentos',
     description:
-      "Un registro sencillo de tu progreso, para que veas con claridad el camino recorrido y los objetivos que te quedan.",
+      'Tu cuestionario inicial y tus documentos privados, siempre a mano para ti y para tu nutricionista.',
     points: [
-      "Registro de peso cuando corresponda",
-      "Seguimiento de tus objetivos personales",
-      "Evolución visual mediante gráficos",
-      "Historial de tus progresos",
+      'Resumen de tu cuestionario: objetivo, actividad, dieta',
+      'Documentos privados que puedes subir cuando quieras',
+      'Edición del cuestionario si cambia tu situación',
+      'Historial con fecha de última actualización',
     ],
+    screenshot: 'documentos.png',
   },
   {
-    id: "seguimiento",
-    icon: "stethoscope",
-    tabLabel: "Seguimiento profesional",
-    title: "Seguimiento profesional",
+    id: 'citas',
+    icon: 'calendar-check',
+    tabLabel: 'Citas',
+    title: 'Citas con tu nutricionista',
     description:
-      "Detrás de cada plan hay un profesional real que supervisa tu evolución y ajusta lo necesario dentro del alcance de tu servicio.",
+      'Reserva tu próxima consulta y consulta el historial de citas anteriores, sin salir de la app.',
     points: [
-      "Supervisión del plan por tu nutricionista",
-      "Revisión periódica de tus datos",
-      "Ajustes cuando sea necesario",
-      "Comunicación profesional dentro del alcance del servicio",
+      'Reserva de nueva cita en los huecos disponibles',
+      'Próximas citas y confirmación automática',
+      'Historial de consultas anteriores',
+      'Contacto directo si necesitas una cita urgente',
     ],
+    screenshot: 'citas.png',
   },
 ];

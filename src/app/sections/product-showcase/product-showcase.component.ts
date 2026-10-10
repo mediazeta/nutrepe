@@ -2,13 +2,13 @@ import { Component, computed, signal } from '@angular/core';
 import { LucideAngularModule } from 'lucide-angular';
 import { ContainerComponent } from '../../ui/container.component';
 import { SectionHeadingComponent } from '../../ui/section-heading.component';
-import { PhoneFrameComponent, IllustrativeTagComponent } from '../../ui/phone-frame.component';
+import { PhoneFrameComponent } from '../../ui/phone-frame.component';
 import { productTabs } from '../../data/features';
 
 @Component({
   selector: 'app-product-showcase',
   standalone: true,
-  imports: [LucideAngularModule, ContainerComponent, SectionHeadingComponent, PhoneFrameComponent, IllustrativeTagComponent],
+  imports: [LucideAngularModule, ContainerComponent, SectionHeadingComponent, PhoneFrameComponent],
   templateUrl: './product-showcase.component.html',
 })
 export class ProductShowcaseComponent {

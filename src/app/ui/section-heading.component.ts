@@ -4,12 +4,12 @@ import { Component, Input } from '@angular/core';
   selector: 'app-section-heading',
   standalone: true,
   template: `
-    <div [class]="align === 'center' ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl text-left'">
+    <div [class]="align === 'center' ? 'mx-auto max-w-3xl text-center' : 'max-w-2xl text-left'">
       @if (eyebrow) {
         <span
           [class]="
-            'mb-3 inline-block rounded-full px-3.5 py-1 text-xs font-semibold uppercase tracking-wide ' +
-            (light ? 'bg-white/10 text-mint' : 'bg-mint-soft text-forest-2')
+            'mb-4 block text-xs font-bold uppercase tracking-[0.14em] ' +
+            (light ? 'text-mint' : 'text-mint')
           "
         >
           {{ eyebrow }}
@@ -17,7 +17,7 @@ import { Component, Input } from '@angular/core';
       }
       <h2
         [class]="
-          'text-balance text-3xl font-bold tracking-tight sm:text-4xl lg:text-[2.6rem] ' +
+          'text-balance text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl ' +
           (light ? 'text-white' : 'text-forest')
         "
       >
@@ -26,7 +26,7 @@ import { Component, Input } from '@angular/core';
       @if (description) {
         <p
           [class]="
-            'mt-4 text-base leading-relaxed sm:text-lg ' + (light ? 'text-white/75' : 'text-muted')
+            'mt-5 text-base leading-relaxed sm:text-lg ' + (light ? 'text-white/70' : 'text-muted')
           "
         >
           {{ description }}
@@ -39,6 +39,6 @@ export class SectionHeadingComponent {
   @Input() eyebrow?: string;
   @Input() title = '';
   @Input() description?: string;
-  @Input() align: 'center' | 'left' = 'center';
+  @Input() align: 'center' | 'left' = 'left';
   @Input() light = false;
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LucideAngularModule } from 'lucide-angular';
 import { ContainerComponent } from '../../ui/container.component';
 import { SectionHeadingComponent } from '../../ui/section-heading.component';
+import { PhoneFrameComponent } from '../../ui/phone-frame.component';
 
 const GUARANTEES = [
   {
@@ -24,7 +25,7 @@ const GUARANTEES = [
 @Component({
   selector: 'app-ai-section',
   standalone: true,
-  imports: [LucideAngularModule, ContainerComponent, SectionHeadingComponent],
+  imports: [LucideAngularModule, ContainerComponent, SectionHeadingComponent, PhoneFrameComponent],
   templateUrl: './ai-section.component.html',
 })
 export class AiSectionComponent {

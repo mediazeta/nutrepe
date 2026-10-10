@@ -7,6 +7,7 @@
     "api": "node server/index.js",
     "dev": "concurrently -k -n angular,api -c blue,green \"npm:start\" \"npm:api\"",
     "build": "ng build",
+    "build:pages": "ng build --configuration=production,github-pages && node scripts/post-build-gh-pages.js",
     "serve:prod": "node server/index.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

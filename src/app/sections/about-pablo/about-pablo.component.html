@@ -8,53 +8,49 @@
 
     <div class="mt-14 grid gap-10 lg:grid-cols-[320px_1fr] lg:items-start">
       <div class="mx-auto w-full max-w-xs lg:mx-0">
-        <div class="flex aspect-[4/5] w-full flex-col items-center justify-center gap-3 rounded-3xl bg-gradient-to-br from-forest to-forest-2 text-cream">
+        <div class="flex aspect-[4/5] w-full flex-col items-center justify-center gap-3 border border-ink/10 bg-gradient-to-br from-forest to-forest-2 text-cream">
           <span class="flex h-24 w-24 items-center justify-center rounded-full bg-white/10 text-4xl font-bold">PE</span>
           <p class="px-6 text-center text-xs text-cream/60">Fotografía profesional pendiente de incorporar</p>
         </div>
-        <div class="mt-5 rounded-2xl bg-mint-soft p-4 text-center">
-          <p class="text-sm font-bold text-forest">{{ pablo.name }}</p>
-          <p class="text-xs text-muted">{{ pablo.role }}</p>
-          <p class="mt-1 text-xs font-medium text-forest-2">{{ pablo.license }}</p>
+        <div class="mt-5">
+          <p class="text-xs font-bold uppercase tracking-[0.14em] text-mint">{{ pablo.role }} · {{ pablo.license }}</p>
+          <p class="mt-1 text-2xl font-extrabold text-forest">{{ pablo.name }}</p>
         </div>
       </div>
 
       <div>
         <p class="text-base leading-relaxed text-ink/80 sm:text-lg">{{ pablo.philosophy }}</p>
 
-        <div class="mt-8 grid gap-5 sm:grid-cols-2">
-          <div class="rounded-2xl bg-cream-2 p-5">
-            <div class="mb-3 flex items-center gap-2 text-forest-2">
-              <lucide-angular name="graduation-cap" class="h-5 w-5"></lucide-angular>
-              <h3 class="text-sm font-semibold">Formación</h3>
-            </div>
-            <ul class="space-y-2 text-sm text-ink/75">
+        <div class="mt-10 grid gap-10 border-t border-ink/10 pt-10 sm:grid-cols-2">
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-[0.14em] text-mint">Formación</h3>
+            <ul class="mt-4 space-y-2.5 text-sm text-ink/75">
               @for (item of pablo.education; track item) {
-                <li>{{ item }}</li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-0.5 text-ink/30">—</span>
+                  <span>{{ item }}</span>
+                </li>
               }
             </ul>
           </div>
 
-          <div class="rounded-2xl bg-cream-2 p-5">
-            <div class="mb-3 flex items-center gap-2 text-forest-2">
-              <lucide-angular name="stethoscope" class="h-5 w-5"></lucide-angular>
-              <h3 class="text-sm font-semibold">Especialización</h3>
-            </div>
-            <p class="text-sm text-ink/75">{{ pablo.specialization }}</p>
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-[0.14em] text-mint">Especialización</h3>
+            <p class="mt-4 text-sm text-ink/75">{{ pablo.specialization }}</p>
 
-            <div class="mt-4 flex items-center gap-2 text-forest-2">
-              <lucide-angular name="badge-check" class="h-5 w-5"></lucide-angular>
-              <h3 class="text-sm font-semibold">Trayectoria</h3>
-            </div>
-            <ul class="mt-2 space-y-1.5 text-sm text-ink/75">
+            <h3 class="mt-6 text-xs font-bold uppercase tracking-[0.14em] text-mint">Trayectoria</h3>
+            <ul class="mt-4 space-y-2.5 text-sm text-ink/75">
               @for (item of pablo.experience; track item) {
-                <li>{{ item }}</li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-0.5 text-ink/30">—</span>
+                  <span>{{ item }}</span>
+                </li>
               }
             </ul>
           </div>
         </div>
 
-        <div class="mt-8 flex flex-wrap items-center gap-4">
+        <div class="mt-10 flex flex-wrap items-center gap-6">
           <app-button [href]="pablo.personalSiteUrl" variant="secondary">
             Ver web personal de Pablo
             <lucide-angular name="external-link" class="h-4 w-4"></lucide-angular>

@@ -32,6 +32,10 @@ import {
   Phone,
   MapPin,
   Leaf,
+  Plus,
+  Minus,
+  Folder,
+  CalendarCheck,
 } from 'lucide-angular';
 
 import { routes } from './app.routes';
@@ -75,6 +79,10 @@ export const appConfig: ApplicationConfig = {
         Phone,
         MapPin,
         Leaf,
+        Plus,
+        Minus,
+        Folder,
+        CalendarCheck,
       })
     ),
   ],

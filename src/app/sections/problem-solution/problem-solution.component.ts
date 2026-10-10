@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LucideAngularModule } from 'lucide-angular';
 import { ContainerComponent } from '../../ui/container.component';
 import { SectionHeadingComponent } from '../../ui/section-heading.component';
 import { problems } from '../../data/problems';
@@ -15,7 +14,7 @@ const SOLUTIONS = [
 @Component({
   selector: 'app-problem-solution',
   standalone: true,
-  imports: [LucideAngularModule, ContainerComponent, SectionHeadingComponent],
+  imports: [ContainerComponent, SectionHeadingComponent],
   templateUrl: './problem-solution.component.html',
 })
 export class ProblemSolutionComponent {

@@ -6,11 +6,11 @@
       description="Un proceso sencillo que combina la valoración profesional con la comodidad de una herramienta digital."
     ></app-section-heading>
 
-    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="mt-16 grid gap-10 border-t border-ink/10 pt-10 sm:grid-cols-2 sm:gap-0 sm:divide-x sm:divide-ink/10 lg:grid-cols-4">
       @for (step of steps; track step.number) {
-        <div class="relative rounded-3xl bg-white p-7 shadow-sm ring-1 ring-ink/5">
-          <span class="text-4xl font-extrabold text-mint-soft">{{ step.number }}</span>
-          <h3 class="mt-4 text-lg font-bold text-forest">{{ step.title }}</h3>
+        <div class="sm:px-8">
+          <span class="text-xs font-bold text-mint">{{ step.number }}</span>
+          <h3 class="mt-3 text-lg font-bold text-forest">{{ step.title }}</h3>
           <p class="mt-2 text-sm leading-relaxed text-muted">{{ step.description }}</p>
         </div>
       }

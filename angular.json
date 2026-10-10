@@ -54,6 +54,14 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "github-pages": {
+              "outputPath": {
+                "base": "docs",
+                "browser": ""
+              },
+              "baseHref": "/nutrepe/",
+              "outputHashing": "all"
             }
           },
           "defaultConfiguration": "production"

@@ -6,26 +6,26 @@
       description="Muchas personas no abandonan una alimentación saludable por falta de voluntad, sino porque el proceso no está pensado para su vida real."
     ></app-section-heading>
 
-    <div class="mt-14 grid gap-6 lg:grid-cols-2">
-      <div class="rounded-3xl border border-ink/5 bg-white p-7 sm:p-9">
-        <h3 class="text-sm font-semibold uppercase tracking-wide text-muted">Lo que suele pasar</h3>
-        <ul class="mt-5 space-y-4">
+    <div class="mt-16 grid gap-10 border-t border-ink/10 pt-10 lg:grid-cols-2 lg:gap-0 lg:divide-x lg:divide-ink/10">
+      <div class="lg:pr-12">
+        <h3 class="text-xs font-bold uppercase tracking-[0.14em] text-muted">Lo que suele pasar</h3>
+        <ul class="mt-6 space-y-4">
           @for (p of problems; track p) {
             <li class="flex items-start gap-3">
-              <lucide-angular name="circle-x" class="mt-0.5 h-5 w-5 shrink-0 text-ink/30"></lucide-angular>
-              <span class="text-sm leading-relaxed text-ink/80 sm:text-base">{{ p }}</span>
+              <span class="mt-0.5 text-ink/30">—</span>
+              <span class="text-sm leading-relaxed text-ink/70 sm:text-base">{{ p }}</span>
             </li>
           }
         </ul>
       </div>
 
-      <div class="rounded-3xl bg-forest p-7 text-cream sm:p-9">
-        <h3 class="text-sm font-semibold uppercase tracking-wide text-mint">Lo que hace Nutrepe</h3>
-        <ul class="mt-5 space-y-4">
+      <div class="lg:pl-12">
+        <h3 class="text-xs font-bold uppercase tracking-[0.14em] text-mint">Lo que hace Nutrepe</h3>
+        <ul class="mt-6 space-y-4">
           @for (s of solutions; track s) {
             <li class="flex items-start gap-3">
-              <lucide-angular name="circle-check" class="mt-0.5 h-5 w-5 shrink-0 text-mint"></lucide-angular>
-              <span class="text-sm leading-relaxed text-cream/90 sm:text-base">{{ s }}</span>
+              <span class="mt-0.5 font-bold text-mint">—</span>
+              <span class="text-sm leading-relaxed text-ink/85 sm:text-base">{{ s }}</span>
             </li>
           }
         </ul>

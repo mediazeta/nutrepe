@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   template: `
     <span class="inline-flex items-center gap-2">
       <img
-        src="/brand/nutrepe-mark.png"
+        src="brand/nutrepe-mark.png"
         alt="Nutrepe"
         [style.width.px]="markSize"
         [style.height.px]="markSize"

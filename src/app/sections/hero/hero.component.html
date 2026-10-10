@@ -1,31 +1,35 @@
 <section id="top" class="relative overflow-hidden pb-20 pt-10 sm:pb-28 sm:pt-16">
-  <div aria-hidden="true" class="absolute inset-x-0 top-0 -z-10 h-[620px] bg-gradient-to-b from-mint-soft via-cream to-cream"></div>
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 -z-10"
+    style="background-image: radial-gradient(circle at 15% 0%, rgba(11,30,110,0.07), transparent 45%), repeating-linear-gradient(transparent, transparent 38px, rgba(20,26,46,0.05) 39px)"
+  ></div>
 
   <app-container className="grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
     <div class="max-w-xl">
-      <span class="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-xs font-semibold text-forest-2 shadow-sm ring-1 ring-forest/10">
-        <lucide-angular name="sparkles" class="h-3.5 w-3.5"></lucide-angular>
+      <span class="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white px-3.5 py-1.5 text-xs font-semibold text-forest">
+        <span class="h-1.5 w-1.5 rounded-full bg-mint"></span>
         Nutrición personalizada + IA + profesional colegiado
       </span>
 
-      <h1 class="mt-5 text-balance text-4xl font-extrabold tracking-tight text-forest sm:text-5xl lg:text-[3.2rem] lg:leading-[1.08]">
+      <h1 class="mt-6 text-balance text-5xl font-extrabold leading-[1.02] tracking-tight text-forest sm:text-6xl lg:text-7xl">
         Tu alimentación, más fácil. Tus objetivos, más cerca.
       </h1>
 
-      <p class="mt-5 text-lg leading-relaxed text-muted">
+      <p class="mt-6 max-w-lg text-lg leading-relaxed text-muted">
         Descubre una nueva forma de cuidar tu alimentación con planes personalizados, supervisión
         de un nutricionista y un asistente inteligente que te acompaña en tu día a día.
       </p>
 
-      <div class="mt-8 flex flex-wrap items-center gap-4">
+      <div class="mt-9 flex flex-wrap items-center gap-6">
         <app-button href="#como-funciona" size="lg">
           Descubre Nutrepe
           <lucide-angular name="arrow-right" class="h-4 w-4"></lucide-angular>
         </app-button>
-        <app-button href="#planes" variant="secondary" size="lg">Ver planes</app-button>
+        <app-button href="#planes" variant="text" size="lg">Ver planes</app-button>
       </div>
 
-      <p class="mt-6 text-xs text-muted">
+      <p class="mt-8 max-w-sm text-xs text-muted">
         Un plan desarrollado y supervisado por un dietista-nutricionista. La IA acompaña, no
         sustituye la valoración profesional.
       </p>
@@ -34,66 +38,19 @@
     <div class="relative flex justify-center lg:justify-end">
       <div class="relative">
         <app-phone-frame>
-          <div class="flex h-full flex-col gap-3 p-4">
-            <div class="flex items-center justify-between">
-              <div>
-                <p class="text-[10px] font-medium text-muted">Hoy</p>
-                <p class="text-sm font-bold text-forest">Mi plan nutricional</p>
-              </div>
-              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-mint-soft text-forest-2">
-                <lucide-angular name="utensils" class="h-3.5 w-3.5"></lucide-angular>
-              </span>
-            </div>
-            @for (meal of meals; track meal.meal) {
-              <div class="rounded-2xl bg-white p-3 shadow-sm">
-                <p class="text-[10px] font-semibold uppercase tracking-wide text-forest-2/70">{{ meal.meal }}</p>
-                <p class="mt-1 text-xs font-medium text-ink">{{ meal.item }}</p>
-              </div>
-            }
-          </div>
+          <img src="app/plan.png" alt="Mi plan nutricional en la app Nutrepe" class="h-full w-full object-cover object-top" />
         </app-phone-frame>
-        <app-illustrative-tag></app-illustrative-tag>
       </div>
 
       <div class="absolute -left-4 top-6 hidden animate-float sm:block lg:-left-14">
         <app-phone-frame [compact]="true" className="shadow-xl">
-          <div class="flex h-full flex-col gap-2 p-2.5">
-            <div class="flex items-center gap-1.5">
-              <span class="flex h-5 w-5 items-center justify-center rounded-full bg-forest text-mint">
-                <lucide-angular name="sparkles" class="h-2.5 w-2.5"></lucide-angular>
-              </span>
-              <p class="text-[10px] font-bold text-forest">Asistente Nutrepe</p>
-            </div>
-            <div class="flex-1 space-y-1.5 overflow-hidden">
-              <div class="ml-auto max-w-[85%] rounded-xl rounded-tr-sm bg-forest px-2 py-1.5 text-[8px] leading-snug text-cream">
-                Hoy como fuera de casa, ¿cómo adapto mi menú?
-              </div>
-              <div class="max-w-[90%] rounded-xl rounded-tl-sm bg-white px-2 py-1.5 text-[8px] leading-snug text-ink shadow-sm">
-                Puedo ayudarte a encontrar alternativas compatibles con tu plan.
-              </div>
-            </div>
-          </div>
+          <img src="app/chat.png" alt="Asistente inteligente de Nutrepe" class="h-full w-full object-cover object-top" />
         </app-phone-frame>
       </div>
 
       <div class="absolute -right-4 bottom-10 hidden animate-float sm:block lg:-right-14" style="animation-delay: 1.2s">
         <app-phone-frame [compact]="true" className="shadow-xl">
-          <div class="flex h-full flex-col gap-2 p-2.5">
-            <div class="flex items-center justify-between">
-              <p class="text-[10px] font-bold text-forest">Mi evolución</p>
-              <span class="flex h-5 w-5 items-center justify-center rounded-full bg-mint-soft text-forest-2">
-                <lucide-angular name="chart-line" class="h-2.5 w-2.5"></lucide-angular>
-              </span>
-            </div>
-            <div class="flex-1 rounded-xl bg-white p-2 shadow-sm">
-              <p class="text-[7px] text-muted">Últimas semanas</p>
-              <div class="mt-2 flex h-20 items-end gap-1">
-                @for (h of evolutionBars; track $index) {
-                  <div [style.height.%]="h" class="flex-1 rounded-t-sm bg-gradient-to-t from-forest-2 to-mint"></div>
-                }
-              </div>
-            </div>
-          </div>
+          <img src="app/evolucion.png" alt="Mi evolución en la app Nutrepe" class="h-full w-full object-cover object-top" />
         </app-phone-frame>
       </div>
     </div>
