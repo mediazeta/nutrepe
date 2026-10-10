@@ -16,7 +16,7 @@ export const plans: Plan[] = [
   {
     id: "mensual",
     name: "Plan mensual",
-    price: "49,90 €",
+    price: "40 €",
     priceDetail: "/mes",
     features: [
       "Acceso completo a la aplicación",
@@ -27,12 +27,12 @@ export const plans: Plan[] = [
     ],
   },
   {
-    id: "trimestral",
-    name: "Plan trimestral",
-    price: "129,90 €",
-    priceDetail: "/ cada 3 meses",
-    billingNote: "Equivalente a 43,30 €/mes",
-    savingsNote: "Ahorras 19,80 € frente a 3 mensualidades",
+    id: "semestral",
+    name: "Plan semestral",
+    price: "200 €",
+    priceDetail: "/ cada 6 meses",
+    billingNote: "Equivalente a 33,33 €/mes",
+    savingsNote: "Ahorras 40 € frente a 6 mensualidades",
     recommended: true,
     features: [
       "Todo lo incluido en el plan mensual",

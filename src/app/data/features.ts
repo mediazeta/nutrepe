@@ -43,8 +43,8 @@ export const productTabs: ProductTab[] = [
   {
     id: 'chat',
     icon: 'message-circle',
-    tabLabel: 'Asistente inteligente',
-    title: 'Asistente inteligente',
+    tabLabel: 'Asistente Inteligente con IA',
+    title: 'Asistente Inteligente con IA',
     description:
       'Resuelve dudas sobre tu menú en cualquier momento, con respuestas basadas en tu plan nutricional real.',
     points: [
