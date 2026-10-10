@@ -13,13 +13,24 @@ import { productTabs } from '../../data/features';
 })
 export class ProductShowcaseComponent {
   readonly tabs = productTabs;
-  readonly activeId = signal(productTabs[0].id);
+  readonly activeIndex = signal(0);
 
-  readonly activeTab = computed(
-    () => this.tabs.find((t) => t.id === this.activeId()) ?? this.tabs[0]
-  );
+  readonly activeTab = computed(() => this.tabs[this.activeIndex()]);
 
   select(id: string) {
-    this.activeId.set(id);
+    const index = this.tabs.findIndex((t) => t.id === id);
+    if (index >= 0) this.activeIndex.set(index);
+  }
+
+  selectIndex(index: number) {
+    this.activeIndex.set(index);
+  }
+
+  previous() {
+    this.activeIndex.update((i) => (i - 1 + this.tabs.length) % this.tabs.length);
+  }
+
+  next() {
+    this.activeIndex.update((i) => (i + 1) % this.tabs.length);
   }
 }

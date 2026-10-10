@@ -14,7 +14,7 @@
               (click)="select(tab.id)"
               [class]="
                 'flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors ' +
-                (tab.id === activeId() ? 'bg-forest text-cream' : 'border border-ink/10 bg-white text-ink/70 hover:border-ink/20')
+                (tab.id === activeTab().id ? 'bg-forest text-cream' : 'border border-ink/10 bg-white text-ink/70 hover:border-ink/20')
               "
             >
               <lucide-angular [name]="tab.icon" class="h-4 w-4"></lucide-angular>
@@ -38,10 +38,46 @@
         </div>
       </div>
 
-      <div class="relative mx-auto">
-        <app-phone-frame>
-          <img [src]="'app/' + activeTab().screenshot" [alt]="activeTab().title" class="h-full w-full object-cover object-top" />
-        </app-phone-frame>
+      <div class="mx-auto flex flex-col items-center">
+        <div class="flex items-center gap-3 sm:gap-5">
+          <button
+            type="button"
+            aria-label="Pantalla anterior"
+            (click)="previous()"
+            class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-ink/10 bg-white text-forest transition-colors hover:border-ink/20 hover:text-mint"
+          >
+            <lucide-angular name="arrow-right" class="h-4 w-4 rotate-180"></lucide-angular>
+          </button>
+
+          <div class="relative">
+            <app-phone-frame>
+              <img [src]="'app/' + activeTab().screenshot" [alt]="activeTab().title" class="h-full w-full object-cover object-top" />
+            </app-phone-frame>
+          </div>
+
+          <button
+            type="button"
+            aria-label="Pantalla siguiente"
+            (click)="next()"
+            class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-ink/10 bg-white text-forest transition-colors hover:border-ink/20 hover:text-mint"
+          >
+            <lucide-angular name="arrow-right" class="h-4 w-4"></lucide-angular>
+          </button>
+        </div>
+
+        <div class="mt-6 flex items-center gap-2">
+          @for (tab of tabs; track tab.id; let i = $index) {
+            <button
+              type="button"
+              [attr.aria-label]="'Ver ' + tab.title"
+              (click)="selectIndex(i)"
+              [class]="
+                'h-2 rounded-full transition-all ' +
+                (tab.id === activeTab().id ? 'w-6 bg-mint' : 'w-2 bg-ink/15 hover:bg-ink/30')
+              "
+            ></button>
+          }
+        </div>
       </div>
     </div>
   </app-container>
