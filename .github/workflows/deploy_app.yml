@@ -1,0 +1,46 @@
+name: Deploy Nutrepe
+run-name: Deploy Nutrepe
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Nutrepe
+        run: npm run build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Delete contents of S3 bucket
+        run: |
+          aws s3 rm s3://nutrepe.com --recursive
+
+      - name: Upload build artifacts to S3
+        run: |
+          aws s3 cp dist/nutrepe/browser s3://nutrepe.com/ --recursive
+
+      - name: Create CloudFront invalidation
+        run: |
+          aws cloudfront create-invalidation --distribution-id EKBSXV4IJ2U7U --paths "/*"
