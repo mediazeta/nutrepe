@@ -43,7 +43,7 @@
             }
           </ul>
 
-          <app-button href="#cta-final" [variant]="plan.recommended ? 'secondary' : 'primary'" className="mt-7 w-full">
+          <app-button (clicked)="start(plan.id)" [variant]="plan.recommended ? 'secondary' : 'primary'" className="mt-7 w-full">
             Empezar con este plan
           </app-button>
         </div>
