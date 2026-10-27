@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
-const API = 'http://localhost:8080';
+const API = 'https://nutricion-api.mediazeta.com';
 const TERMS_VERSION = '1.0';
 type PublicPlan = { id: string; code?: string; name: string; user_price?: number | string; price?: number | string; period_days?: number; cadence?: string };
 type RedsysForm = { url?: string; action?: string; Ds_SignatureVersion?: string; Ds_MerchantParameters?: string; Ds_Signature?: string; signatureVersion?: string; merchantParameters?: string; signature?: string };

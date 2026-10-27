@@ -2,7 +2,7 @@ import { Component, OnInit, inject, signal } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
-const API = 'http://localhost:8080';
+const API = 'https://nutricion-api.mediazeta.com';
 type PaymentState = { status?: 'pending' | 'paid' | 'failed'; state?: string; message?: string };
 
 @Component({
