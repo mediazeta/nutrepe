@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /contratar
+Disallow: /pago/
+
+Sitemap: https://www.nutrepe.com/sitemap.xml
