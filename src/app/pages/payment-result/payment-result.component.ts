@@ -17,8 +17,15 @@ type PaymentState = { status?: 'pending' | 'paid' | 'failed'; state?: string; me
         } @else if (state() === 'paid') {
           <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-mint-soft text-2xl text-mint">✓</div>
           <h1 class="mt-6 text-3xl font-extrabold text-forest">¡Ya está, tu plan está activo!</h1>
-          <p class="mt-3 text-sm leading-6 text-muted">El pago ha sido confirmado. Ya puedes iniciar sesión en Nutrepe con la cuenta que acabas de crear.</p>
-          <a href="https://app.nutrepe.com" class="mt-7 inline-flex rounded-full bg-forest px-7 py-3.5 text-sm font-bold text-white transition hover:bg-forest-2">Ir a Nutrepe <span class="ml-2">→</span></a>
+          <p class="mt-3 text-sm leading-6 text-muted">Tu pago se ha registrado correctamente y tu perfil ya está creado. Utiliza las credenciales que elegiste al registrarte para iniciar sesión en la app.</p>
+          <p class="mt-6 text-sm font-bold text-forest">Puedes descargarla aquí:</p>
+          <div class="mt-3 flex flex-wrap items-center justify-center gap-3">
+            <a href="https://play.google.com/store/apps/details?id=com.slg.nutrepe&hl=es_419" target="_blank" rel="noopener noreferrer" aria-label="Descargar Nutrepe en Google Play">
+              <img src="/app/google-play-badge.png" alt="Disponible en Google Play" class="h-12 w-auto" />
+            </a>
+            <img src="/app/app-store-badge.png" alt="Próximamente en App Store" class="h-12 w-auto" />
+          </div>
+          <a href="https://app.nutrepe.com" class="mt-6 inline-flex rounded-full bg-forest px-7 py-3.5 text-sm font-bold text-white transition hover:bg-forest-2">Iniciar sesión en Nutrepe <span class="ml-2">→</span></a>
         } @else if (state() === 'pending') {
           <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-forest-soft text-2xl text-forest">…</div>
           <h1 class="mt-6 text-3xl font-extrabold text-forest">Pago pendiente de confirmación</h1>

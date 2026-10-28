@@ -47,7 +47,7 @@ type RedsysForm = { url?: string; action?: string; Ds_SignatureVersion?: string;
               <span>Quiero recibir novedades y comunicaciones comerciales (opcional).</span>
             </label>
             <button type="submit" [disabled]="submitting()" class="flex w-full items-center justify-center gap-2 rounded-full bg-forest px-6 py-4 text-sm font-bold text-white transition duration-200 hover:bg-forest-2 active:scale-[.98] disabled:cursor-wait disabled:opacity-60">
-              {{ submitting() ? 'Preparando pago…' : 'Contratar con obligación de pago' }} <span aria-hidden="true">→</span>
+              {{ submitting() ? 'Preparando pago…' : 'Contratar' }} <span aria-hidden="true">→</span>
             </button>
             <p class="text-center text-xs leading-5 text-muted">Pago procesado de forma segura por Redsys. Nutrepe no almacena los datos de tu tarjeta.</p>
           </form> }
