@@ -23,7 +23,7 @@ export const productTabs: ProductTab[] = [
       'Progreso del plan actual de un vistazo',
       'Cantidades que puedes mostrar u ocultar',
     ],
-    screenshot: 'plan.png',
+    screenshot: 'plan.jpeg',
   },
   {
     id: 'evolucion',
@@ -38,7 +38,7 @@ export const productTabs: ProductTab[] = [
       'Resumen semanal con prioridades para ajustar',
       'Historial de revisiones entre consultas',
     ],
-    screenshot: 'evolucion.png',
+    screenshot: 'evolucion.jpeg',
   },
   {
     id: 'chat',
@@ -53,7 +53,7 @@ export const productTabs: ProductTab[] = [
       'Sugerencias concretas para tu próxima comida',
       'Límite de mensajes diarios transparente',
     ],
-    screenshot: 'chat.png',
+    screenshot: 'chat.jpeg',
   },
   {
     id: 'documentos',
@@ -68,7 +68,7 @@ export const productTabs: ProductTab[] = [
       'Edición del cuestionario si cambia tu situación',
       'Historial con fecha de última actualización',
     ],
-    screenshot: 'documentos.png',
+    screenshot: 'documentos.jpeg',
   },
   {
     id: 'citas',
@@ -83,6 +83,6 @@ export const productTabs: ProductTab[] = [
       'Historial de consultas anteriores',
       'Contacto directo si necesitas una cita urgente',
     ],
-    screenshot: 'citas.png',
+    screenshot: 'citas.jpeg',
   },
 ];
