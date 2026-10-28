@@ -132,7 +132,7 @@ export class CheckoutComponent implements OnInit {
 
   private fail(message: string) { this.error.set(message); this.submitting.set(false); }
   private redirectToRedsys(payment: RedsysForm) {
-    const form = document.createElement('form'); form.method = 'POST'; form.action = payment.url ?? payment.action ?? 'https://sis-t.redsys.es:25443/sis/realizarPago';
+    const form = document.createElement('form'); form.method = 'POST'; form.action = payment.url ?? payment.action ?? 'https://sis.redsys.es/sis/realizarPago';
     const fields: Record<string, string | undefined> = {
       Ds_SignatureVersion: payment.Ds_SignatureVersion ?? payment.signatureVersion,
       Ds_MerchantParameters: payment.Ds_MerchantParameters ?? payment.merchantParameters,
